@@ -15,7 +15,7 @@
     "pree2e:headless": "npm run ci:server:await",
     "e2e:headless": "npm run e2e:cypress:headless",
     "e2e:cypress:headless": "npm run e2e:cypress -- --headless",
-    "e2e:cypress": "cypress run --browser chrome --record ${CYPRESS_ENABLE_RECORD:-false}",
+    "e2e:cypress": "cypress run --browser chrome --record false",
     "cypress": "cypress open",
     "jest": "jest --coverage --logHeapUsage --maxWorkers=2 --config jest.conf.js",
     "start": "ng serve --hmr",
