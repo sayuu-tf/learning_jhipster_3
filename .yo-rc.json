@@ -41,6 +41,8 @@
     "jwtSecretKey": "NDNmNmIzNTlhNTkwZDc5NGM2ZTAxZjMxNjhlNTc0ZDdlYTdkYWZkYWI3OGIzYWQ5ZGFmMDEzMGQ2MWIwOTcyMmRlNGUzMjEzNWNmOTI1Mzc2M2FmZTEwMWUxYzcxNTY3ZWRjNWUyYTU5OGZiZTA1NTdmMTY4OTg3OGZjNDA4OTI=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en", "ja"]
+    "languages": ["en", "ja"],
+    "entities": ["Blog", "Post", "Tag"],
+    "lastLiquibaseTimestamp": 1626850708000
   }
 }

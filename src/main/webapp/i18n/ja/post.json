@@ -1,0 +1,28 @@
+{
+  "blogApp": {
+    "post": {
+      "home": {
+        "title": "Posts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Post を追加",
+        "createOrEditLabel": "Postを追加または編集",
+        "notFound": "No Posts found"
+      },
+      "created": "A new Post is created with identifier {{ param }}",
+      "updated": "A Post is updated with identifier {{ param }}",
+      "deleted": "A Post is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Post {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Post"
+      },
+      "id": "ID",
+      "title": "Title",
+      "content": "Content",
+      "date": "Date",
+      "blog": "Blog",
+      "tag": "Tag"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "blogApp": {
+    "blog": {
+      "home": {
+        "title": "Blogs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Blog を追加",
+        "createOrEditLabel": "Blogを追加または編集",
+        "notFound": "No Blogs found"
+      },
+      "created": "A new Blog is created with identifier {{ param }}",
+      "updated": "A Blog is updated with identifier {{ param }}",
+      "deleted": "A Blog is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Blog {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Blog"
+      },
+      "id": "ID",
+      "name": "Name",
+      "handle": "Handle",
+      "user": "User"
+    }
+  }
+}
