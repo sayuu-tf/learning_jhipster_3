@@ -78,6 +78,15 @@ describe('Post e2e test', () => {
   });
 
   it('should create an instance of Post', () => {
+    // add blog before post
+    cy.clickOnEntityMenuItem('blog');
+    cy.get(entityCreateButtonSelector).click({ force: true });
+    cy.get(`[data-cy="name"]`).type('Admin blog', { force: true }).invoke('val');
+    cy.get(`[data-cy="handle"]`).type('admin', { force: true }).invoke('val');
+    cy.get('[data-cy="user"]').select('admin');
+    cy.get(entityCreateSaveButtonSelector).click({ force: true });
+    // end of add blog
+
     cy.intercept('GET', '/api/posts*').as('entitiesRequest');
     cy.visit('/');
     cy.clickOnEntityMenuItem('post');
@@ -97,7 +106,7 @@ describe('Post e2e test', () => {
 
     cy.get(`[data-cy="date"]`).type('2021-07-20T12:51').invoke('val').should('equal', '2021-07-20T12:51');
 
-    cy.setFieldSelectToLastOfEntity('blog');
+    cy.get('[data-cy="blog"]').select('Admin blog');
 
     cy.setFieldSelectToLastOfEntity('tag');
 
@@ -131,6 +140,16 @@ describe('Post e2e test', () => {
         cy.wait('@entitiesRequestAfterDelete');
         cy.get(entityTableSelector).should('have.lengthOf', startingEntitiesCount - 1);
       }
+      cy.visit('/');
+    });
+
+    // delete blog added earlier
+    cy.intercept('GET', '/api/blogs*').as('entitiesRequest');
+    cy.intercept('DELETE', '/api/blogs/*').as('deleteEntityRequest');
+    cy.wait('@entitiesRequest').then(({ request, response }) => {
+      cy.get(entityDeleteButtonSelector).last().click({ force: true });
+      cy.get(entityConfirmDeleteButtonSelector).click({ force: true });
+      cy.wait('@deleteEntityRequest');
       cy.visit('/');
     });
   });
